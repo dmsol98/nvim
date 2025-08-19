@@ -68,3 +68,6 @@ vim.o.confirm = true
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Require configurations from core and plugins
+require("configs.mappings")
