@@ -1,4 +1,4 @@
--- lua/plugins/catppuccin.lua
+-- lua/plugins/colorscheme.lua
 return {
   {
     "catppuccin/nvim",
