@@ -15,9 +15,9 @@ vim.o.showmode = true
 
 -- Sync clipboard between OS and NeoVim
 -- Schedule the setting after 'UiEnter' because it can increase startup time.
--- vim.schedule(function()
-vim.o.clipboard = "unnamedplus"
--- end)
+vim.schedule(function()
+	vim.o.clipboard = "unnamedplus"
+end)
 
 -- Wrapped lines stay indented the same amount as the beginning of that line
 vim.o.breakindent = true
