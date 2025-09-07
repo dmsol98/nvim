@@ -20,6 +20,7 @@ vim.schedule(function()
 end)
 
 -- Wrapped lines stay indented the same amount as the beginning of that line
+vim.o.wrap = false
 vim.o.breakindent = true
 
 -- Save undo history
