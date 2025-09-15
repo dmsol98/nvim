@@ -11,7 +11,7 @@ vim.o.shiftwidth = 2
 vim.o.mouse = "a"
 
 -- Don't show the vim mode (it's already in the status line)
-vim.o.showmode = true
+vim.o.showmode = false
 
 -- Sync clipboard between OS and NeoVim
 -- Schedule the setting after 'UiEnter' because it can increase startup time.
