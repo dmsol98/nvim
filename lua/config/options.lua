@@ -11,7 +11,7 @@ vim.o.shiftwidth = 2
 vim.o.mouse = "a"
 
 -- Don't show the vim mode (it's already in the status line)
-vim.o.showmode = true
+vim.o.showmode = false
 
 -- Sync clipboard between OS and NeoVim
 -- Schedule the setting after 'UiEnter' because it can increase startup time.
@@ -52,6 +52,9 @@ vim.o.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.o.cursorline = true
+
+-- Show vertical line
+vim.o.colorcolumn = "80"
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
