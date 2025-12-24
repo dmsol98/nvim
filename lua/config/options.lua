@@ -7,6 +7,13 @@ vim.o.expandtab = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 
+-- Set indent options
+vim.o.autoindent = true
+vim.o.smartindent = true
+
+-- Enable true colors support
+vim.o.termguicolors = true
+
 -- Enable mouse mode
 vim.o.mouse = "a"
 
