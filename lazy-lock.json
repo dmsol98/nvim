@@ -1,10 +1,10 @@
 {
-  "catppuccin": { "branch": "main", "commit": "30fa4d122d9b22ad8b2e0ab1b533c8c26c4dde86" },
-  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
-  "lualine.nvim": { "branch": "master", "commit": "b8c23159c0161f4b89196f74ee3a6d02cdc3a955" },
-  "mini.nvim": { "branch": "main", "commit": "301ee9f3afa2224b833de7c182574ba6c61e8c6e" },
+  "catppuccin": { "branch": "main", "commit": "6efc53e42cfc97700f19043105bf73ba83c4ae7d" },
+  "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "lualine.nvim": { "branch": "master", "commit": "47f91c416daef12db467145e16bed5bbfe00add8" },
+  "mini.nvim": { "branch": "main", "commit": "fb4ccfed03c1f0d9db702f93a65cb4c0c6c2832b" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
-  "nvim-web-devicons": { "branch": "master", "commit": "6e51ca170563330e063720449c21f43e27ca0bc1" },
-  "render-markdown.nvim": { "branch": "main", "commit": "e76eb2e4262f0f0a1a7bd7a454dd7d44f1299afd" },
+  "nvim-web-devicons": { "branch": "master", "commit": "6788013bb9cb784e606ada44206b0e755e4323d7" },
+  "render-markdown.nvim": { "branch": "main", "commit": "da6a7b25471ab23824f3429225973186eb0b62d2" },
   "vim-tmux-navigator": { "branch": "master", "commit": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a" }
 }
