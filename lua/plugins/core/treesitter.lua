@@ -7,7 +7,7 @@ return {
 
     config = function()
       local lang_required = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" }
-      local lang_custom = { "bash", "cmake", "cpp", "json", "latex", "matlab", "toml", "xml", "yaml" }
+      local lang_custom = { "bash", "cmake", "cpp", "json", "matlab", "toml", "xml", "yaml" }
       local lang_all = {}
       for _, lang in ipairs(lang_required) do
         table.insert(lang_all, lang)
