@@ -27,3 +27,10 @@ Clone this repo in the `%LOCALAPPDATA%` folder in Windows using SSH.
 cd $env:LOCALAPPDATA
 git clone git@github.com:diegosol127/nvim.git nvim
 ```
+
+# To Do
+
+- [ ] automatically set wrap for markdown files
+- [ ] error detection
+- [ ] lsp integration
+- [ ] autocomplete
