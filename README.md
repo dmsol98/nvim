@@ -2,7 +2,7 @@
 
 Install neovim and dependencies using Homebrew.
 ```bash
-brew install neovim tree-sitter lua-language-server
+brew install neovim tree-sitter lua-language-server pyright ruff llvm
 ```
 
 **_Note_:** `brew install tree-sitter-cli` may only be needed for Latex 
@@ -22,7 +22,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Install neovim and dependencies using Chocolately (admin priviliges required).
 
 ```pwsh
-choco install mingw neovim tree-sitter lua-language-server
+choco install mingw neovim tree-sitter lua-language-server pylance llvm
 ```
 
 Clone this repo into `%LOCALAPPDATA%/nvim` using SSH.
@@ -33,7 +33,14 @@ git clone git@github.com:diegosol127/nvim.git $env:LOCALAPPDATA/nvim
 
 # To Do
 
-- [x] automatically set wrap for markdown files
-- [ ] error detection
-- [ ] lsp integration
-- [x] autocomplete
+### LSP Updates
+- [ ] Add LSP for Bash
+- [x] Add LSP for C
+- [x] Add LSP for C++
+- [ ] Add LSP for CMake
+- [x] Add LSP for Python
+
+### Plugins
+- [ ] Whichkey
+- [ ] FTerm
+- [ ] Oil
