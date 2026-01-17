@@ -34,6 +34,25 @@ return {
       vim.lsp.config("lua_ls", {})
       vim.lsp.enable("lua_ls")
 
+      -- Python
+      local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+
+      if is_windows then
+        -- Windows: Pylance
+        print "Windows"
+        vim.lsp.config("pylance", {})
+        vim.lsp.enable("pylance")
+      else
+        -- Linux: Pyright
+        print "Linux"
+        vim.lsp.config("pyright", {})
+        vim.lsp.enable("pyright")
+
+        -- Ruff (linting)
+        vim.lsp.config("ruff_lsp", {})
+        vim.lsp.enable("ruff_lsp")
+      end
+
       -- Keybind for diagnostic details
       vim.keymap.set("n", "<leader>e", function()
           -- Make the diagnostic float focusable. Enter with <C-w>w
