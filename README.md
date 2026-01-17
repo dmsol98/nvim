@@ -33,7 +33,14 @@ git clone git@github.com:diegosol127/nvim.git $env:LOCALAPPDATA/nvim
 
 # To Do
 
-- [x] automatically set wrap for markdown files
-- [x] error detection
-- [x] lsp integration
-- [x] autocomplete
+### LSP Updates
+- [ ] Add LSP for Bash
+- [ ] Add LSP for C
+- [ ] Add LSP for C++
+- [ ] Add LSP for CMake
+- [ ] Add LSP for Python
+
+### Plugins
+- [ ] Whichkey
+- [ ] FTerm
+- [ ] Oil
