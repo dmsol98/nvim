@@ -2,7 +2,7 @@
 
 Install neovim and dependencies using Homebrew.
 ```bash
-brew install neovim tree-sitter lua-language-server pyright ruff
+brew install neovim tree-sitter lua-language-server pyright ruff llvm
 ```
 
 **_Note_:** `brew install tree-sitter-cli` may only be needed for Latex 
@@ -22,7 +22,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Install neovim and dependencies using Chocolately (admin priviliges required).
 
 ```pwsh
-choco install mingw neovim tree-sitter lua-language-server pylance
+choco install mingw neovim tree-sitter lua-language-server pylance llvm
 ```
 
 Clone this repo into `%LOCALAPPDATA%/nvim` using SSH.

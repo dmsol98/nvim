@@ -53,6 +53,12 @@ return {
         vim.lsp.enable("ruff_lsp")
       end
 
+      -- C/C++
+      vim.lsp.config("clangd", {
+        cmd = { "clangd", "--background-index", "--clang-tidy" },
+      })
+      vim.lsp.enable("clangd")
+
       -- Keybind for diagnostic details
       vim.keymap.set("n", "<leader>e", function()
           -- Make the diagnostic float focusable. Enter with <C-w>w
