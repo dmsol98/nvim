@@ -39,15 +39,12 @@ return {
 
       if is_windows then
         -- Windows: Pylance
-        print "Windows"
         vim.lsp.config("pylance", {})
         vim.lsp.enable("pylance")
       else
         -- Linux: Pyright
-        print "Linux"
         vim.lsp.config("pyright", {})
         vim.lsp.enable("pyright")
-
         -- Ruff (linting)
         vim.lsp.config("ruff_lsp", {})
         vim.lsp.enable("ruff_lsp")
