@@ -18,7 +18,7 @@ return {
 
       -- Global diagnostics config
       vim.diagnostic.config({
-        virtua_text = {
+        virtual_text = {
           prefix = "●",
         },
         signs = true,
@@ -27,29 +27,23 @@ return {
         severity_sort = true,
         float = {
           border = "rounded",
-          source = "always",
+          source = "if_many",
         },
       })
 
-      -- Lua language server
-      vim.lsp.config("lua_ls", {
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-            workspace = {
-              library = vim.api.nvim_get_runtime_file("", true),
-              checkThirdParty = false,
-            },
-            telemetry = { enable = false },
-          },
-        },
-      })
-
-      -- Enable the server
+      -- Lua LSP
+      vim.lsp.config("lua_ls", {})
       vim.lsp.enable("lua_ls")
+
+      -- Keybind for diagnostic details
+      vim.keymap.set("n", "<leader>e", function()
+        -- Make the diagnostic float focusable. Enter with <C-w>w
+        vim.diagnostic.open_float(nil, {
+          focus = true,
+          scope = "line",
+        })
+      end,
+      { desc = "Show diagnostics" })
     end,
   },
 }
-
