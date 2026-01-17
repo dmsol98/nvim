@@ -35,10 +35,10 @@ git clone git@github.com:diegosol127/nvim.git $env:LOCALAPPDATA/nvim
 
 ### LSP Updates
 - [ ] Add LSP for Bash
-- [ ] Add LSP for C
-- [ ] Add LSP for C++
+- [x] Add LSP for C
+- [x] Add LSP for C++
 - [ ] Add LSP for CMake
-- [ ] Add LSP for Python
+- [x] Add LSP for Python
 
 ### Plugins
 - [ ] Whichkey
