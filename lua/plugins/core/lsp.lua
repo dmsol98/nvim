@@ -31,7 +31,20 @@ return {
       })
 
       -- Lua LSP
-      vim.lsp.config("lua_ls", {})
+      vim.lsp.config("lua_ls", {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+              checkThridParty = false,
+            },
+            telemetry = { enable = false },
+          },
+        },
+      })
       vim.lsp.enable("lua_ls")
 
       -- Python
