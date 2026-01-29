@@ -9,3 +9,6 @@ vim.keymap.set("n", "k", "gk")
 -- Spell check
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
+
+-- Do not show vertical line
+vim.o.colorcolumn = ""
