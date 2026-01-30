@@ -5,3 +5,6 @@ vim.opt_local.breakindent = true -- Line break on whole words
 -- Allow j/k navigation for wrapped lines
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
+
+-- Do not show vertical line
+vim.o.colorcolumn = ""
