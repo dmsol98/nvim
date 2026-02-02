@@ -42,5 +42,5 @@ git clone git@github.com:diegosol127/nvim.git $env:LOCALAPPDATA/nvim
 
 ### Plugins
 - [ ] Whichkey
-- [ ] FTerm
-- [ ] Oil
+- [x] FTerm
+- [x] Oil
