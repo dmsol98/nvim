@@ -41,6 +41,6 @@ git clone git@github.com:diegosol127/nvim.git $env:LOCALAPPDATA/nvim
 - [x] Add LSP for Python
 
 ### Plugins
-- [ ] Whichkey
+- [x] Whichkey
 - [x] FTerm
 - [x] Oil
