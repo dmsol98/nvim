@@ -11,6 +11,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function()
-  vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
+
+-- View column guide for certain files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "c", "cpp", "lua", "matlab", "python" },
+  callback = function()
+    vim.opt_local.colorcolumn = "80"
   end,
 })
