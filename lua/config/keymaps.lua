@@ -13,3 +13,6 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- Windows and tabs
 vim.keymap.set("n", "<C-w>c", "<CMD>tabclose<CR>", { desc = "Close current tab" })
+
+-- Fzf Lua
+vim.keymap.set('n', '<leader>fs', "<CMD>FzfLua colorschemes<CR>", { desc = 'FzfLua [F]ind Color[S]cheme' })
