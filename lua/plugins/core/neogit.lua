@@ -8,9 +8,9 @@ return {
 
       -- Only one of these is needed.
       "nvim-telescope/telescope.nvim", -- optional
-      "ibhagwan/fzf-lua",              -- optional
-      "nvim-mini/mini.pick",           -- optional
-      "folke/snacks.nvim",             -- optional
+      -- "ibhagwan/fzf-lua",              -- optional
+      -- "nvim-mini/mini.pick",           -- optional
+      -- "folke/snacks.nvim",             -- optional
     },
     cmd = "Neogit",
     keys = {
@@ -50,7 +50,7 @@ return {
         commit_date_format = nil,
         log_date_format = nil,
         -- Show message with spinning animation when a git command is running.
-        process_spinner = false,
+        process_spinner = true,
         -- Used to generate URL's for branch popup action "pull request", "open commit" and "open tree"
         git_services = {
           ["github.com"] = {
@@ -226,17 +226,17 @@ return {
           -- If enabled, uses fzf-lua for menu selection. If the telescope integration
           -- is also selected then telescope is used instead
           -- Requires you to have `ibhagwan/fzf-lua` installed.
-          fzf_lua = nil,
+          fzf_lua = false,
 
           -- If enabled, uses mini.pick for menu selection. If the telescope integration
           -- is also selected then telescope is used instead
           -- Requires you to have `echasnovski/mini.pick` installed.
-          mini_pick = nil,
+          mini_pick = false,
 
           -- If enabled, uses snacks.picker for menu selection. If the telescope integration
           -- is also selected then telescope is used instead
           -- Requires you to have `folke/snacks.nvim` installed.
-          snacks = nil,
+          snacks = false,
         },
         sections = {
           -- Reverting/Cherry Picking
