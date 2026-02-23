@@ -3,7 +3,7 @@
 Install Neovim and dependencies using Homebrew.
 
 ```bash
-brew install neovim tree-sitter lua-language-server pyright ruff llvm ripgrep
+brew install neovim tree-sitter lua-language-server pyright ruff llvm ripgrep fzf
 ```
 
 Clone this repo into `~/.config/nvim` using SSH.
@@ -22,7 +22,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Install Neovim and dependencies using Chocolately (admin privileges required).
 
 ```pwsh
-choco install mingw make neovim tree-sitter lua-language-server pylance llvm ripgrep
+choco install mingw make neovim tree-sitter lua-language-server pylance llvm ripgrep fzf
 ```
 
 Clone this repo into `%LOCALAPPDATA%/nvim` using SSH.
