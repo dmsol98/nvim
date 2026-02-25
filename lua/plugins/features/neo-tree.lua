@@ -9,6 +9,12 @@ return {
     },
     lazy = false,                    -- neo-tree will lazily load itself
     config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          filtered_items = {
+          },
+        },
+      })
       vim.keymap.set('n', '\\', '<CMD>Neotree toggle<CR>', { desc = 'Open Neotree' })
       vim.keymap.set('n', 'g\\', '<CMD>Neotree float git_status<CR>', { desc = 'Neotree Git Status' })
     end,
