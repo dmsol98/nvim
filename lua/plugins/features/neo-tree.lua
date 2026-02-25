@@ -16,7 +16,7 @@ return {
         },
       })
       vim.keymap.set('n', '\\', '<CMD>Neotree toggle<CR>', { desc = 'Open Neotree' })
-      vim.keymap.set('n', 'g\\', '<CMD>Neotree float git_status<CR>', { desc = 'Neotree Git Status' })
+      vim.keymap.set('n', '<leader>gs', '<CMD>Neotree float git_status<CR>', { desc = 'Neotree Git Status' })
     end,
   }
 }
