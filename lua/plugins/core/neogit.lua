@@ -50,7 +50,7 @@ return {
         commit_date_format = nil,
         log_date_format = nil,
         -- Show message with spinning animation when a git command is running.
-        process_spinner = true,
+        process_spinner = false,
         -- Used to generate URL's for branch popup action "pull request", "open commit" and "open tree"
         git_services = {
           ["github.com"] = {
