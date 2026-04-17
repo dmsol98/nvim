@@ -63,6 +63,8 @@ return {
       vim.keymap.set('n', '<leader>fp', function()
         builtin.find_files { cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") }
       end, { desc = 'Telescope [F]ind [P]lugin Files' })
+      -- Fzf Lua
+      vim.keymap.set('n', '<leader>ft', "<CMD>FzfLua colorschemes<CR>", { desc = 'FzfLua [F]ind [T]heme' })
     end,
 
   },
