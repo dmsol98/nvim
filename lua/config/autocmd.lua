@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- View column guide for certain files
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "c", "cpp", "lua", "matlab", "python" },
+  pattern = { "c", "cpp", "lua", "python" },
   callback = function()
     vim.opt_local.colorcolumn = "80"
   end,
