@@ -14,7 +14,9 @@ return {
     },
     cmd = "Neogit",
     keys = {
-      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
+      { "<leader>gg", "<cmd>Neogit<cr>",        desc = "Neogit UI" },
+      { "<leader>gl", "<cmd>Neogit log<cr>",    desc = "Neogit Log" },
+      { "<leader>gl", "<cmd>Neogit commit<cr>", desc = "Neogit Commit" },
     },
 
     -- Default config
