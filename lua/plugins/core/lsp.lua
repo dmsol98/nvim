@@ -34,8 +34,8 @@ return {
       vim.lsp.config("lua_ls", {
         cmd = {
           "lua-language-server",
-          "--logpath=" .. vim.fn.stdpath("cache") .. "/lua_ls/log",
-          "--metapath=" .. vim.fn.stdpath("cache") .. "/lua_ls/meta",
+          "--logpath=" .. vim.fs.joinpath(vim.fn.stdpath("cache"), "lua_ls", "log"),
+          "--metapath=" .. vim.fs.joinpath(vim.fn.stdpath("cache"), "lua_ls", "meta"),
         },
         settings = {
           Lua = {
