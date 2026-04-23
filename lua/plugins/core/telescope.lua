@@ -64,7 +64,14 @@ return {
         builtin.find_files { cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") }
       end, { desc = 'Telescope [F]ind [P]lugin Files' })
       -- Fzf Lua
-      vim.keymap.set('n', '<leader>ft', "<CMD>FzfLua colorschemes<CR>", { desc = 'FzfLua [F]ind [T]heme' })
+      vim.keymap.set('n', '<leader>ft',
+        function()
+          local opts1 = require("telescope.themes").get_dropdown({ layout_config = { width = 0.50, height = 0.50, }, })
+          local opts2 = { enable_preview = true, previewer = false }
+          local opts = vim.tbl_extend('force', opts1, opts2)
+          builtin.colorscheme(opts)
+        end,
+        { desc = 'FzfLua [F]ind [T]heme' })
     end,
 
   },
