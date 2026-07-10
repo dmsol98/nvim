@@ -18,7 +18,17 @@ return {
 
       -- FTerm setup MUST happen before toggle()
       fterm.setup({
+        ft = 'FTerm',
         cmd = cmd,
+        border = 'double',
+        blend = 0,
+        dimensions = {
+          height = 0.5,
+          width = 0.8,
+          x = 0.5,
+          y = 0.85,
+        },
+        hl = 'Normal',
       })
 
       -- Keymaps
