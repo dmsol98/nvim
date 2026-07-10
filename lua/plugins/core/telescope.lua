@@ -30,6 +30,7 @@ return {
 
       -- Set keymaps
       local builtin = require('telescope.builtin')
+
       -- Find files in CWD (indlude hidden, no gitignored files, no files in ".git/" folder)
       vim.keymap.set('n', '<leader>ff',
         function() builtin.find_files({ hidden = true, no_ignore = false, file_ignore_patterns = { '^.git/' } }) end,
@@ -71,7 +72,7 @@ return {
           local opts = vim.tbl_extend('force', opts1, opts2)
           builtin.colorscheme(opts)
         end,
-        { desc = 'FzfLua [F]ind [T]heme' })
+        { desc = 'Telescope [F]ind [T]heme' })
     end,
 
   },
