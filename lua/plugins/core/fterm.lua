@@ -21,7 +21,7 @@ return {
         ft = 'FTerm',
         cmd = cmd,
         border = 'double',
-        blend = 10,
+        blend = 0,
         dimensions = {
           height = 0.5,
           width = 0.8,
