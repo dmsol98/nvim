@@ -3,6 +3,23 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
+        "mason-org/mason.nvim",
+        opts = {},
+      },
+      {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        opts = {
+          ensure_installed = {
+            "lua-language-server",
+            "pyright",
+            "ruff",
+            "clangd",
+            "stylua",
+            "clang-format",
+          },
+        },
+      },
+      {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
         opts = {
