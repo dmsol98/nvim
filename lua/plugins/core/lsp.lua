@@ -16,6 +16,7 @@ return {
             "clangd",
             "stylua",
             "clang-format",
+            "debugpy",
           },
         },
       },
