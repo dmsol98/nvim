@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  branch = 'main',
+  branch = "main",
   lazy = false,
   build = ":TSUpdate",
 
@@ -33,14 +33,14 @@ return {
       table.insert(ft_all, ft)
     end
 
-    ts.install( lang_all )
+    ts.install(lang_all)
 
     vim.api.nvim_create_autocmd("FileType", {
-        pattern = ft_all,
-        callback = function()
-          vim.treesitter.start()
-          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-        end,
-      })
+      pattern = ft_all,
+      callback = function()
+        vim.treesitter.start()
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end,
+    })
   end,
 }

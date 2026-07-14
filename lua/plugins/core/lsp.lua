@@ -53,7 +53,7 @@ return {
         },
         settings = {
           Lua = {
-            diagnostics = { globals = { "vim" }, },
+            diagnostics = { globals = { "vim" } },
             workspace = {
               library = vim.api.nvim_get_runtime_file("", true),
               checkThirdParty = false,
@@ -72,9 +72,6 @@ return {
 
       vim.lsp.config("ruff", {
         cmd = { "ruff", "server" },
-        init_options = {
-          settings = {}, -- e.g. { configuration = { lint = {...} } } if you want more overrides
-        },
       })
 
       -- C/C++
@@ -88,12 +85,12 @@ return {
       -- Keybind for diagnostic details
       vim.keymap.set("n", "<leader>e", function()
         -- Make the diagnostic float focusable. Enter with the same command.
-        vim.diagnostic.open_float(nil, { focus = true, scope = "line", })
+        vim.diagnostic.open_float(nil, { focus = true, scope = "line" })
       end, { desc = "Show diagnostics" })
 
       -- Format on save for clients that support formatting
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('my.lsp', {}),
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("my.lsp", {}),
         callback = function(args)
           local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
           if not client:supports_method("textDocument/formatting", 0) then

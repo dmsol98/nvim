@@ -1,7 +1,7 @@
 return {
   {
-    'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
@@ -10,8 +10,8 @@ return {
       -- require('render-markdown').setup({
       local set = vim.keymap.set
 
-      set('n', '<leader>tm', require('render-markdown').buf_toggle, { desc = "[T]oggle [M]arkdown" })
+      set("n", "<leader>tm", require("render-markdown").buf_toggle, { desc = "[T]oggle [M]arkdown" })
       -- })
     end,
-  }
+  },
 }

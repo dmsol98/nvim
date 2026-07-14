@@ -1,8 +1,8 @@
 return {
   {
-    'numToStr/FTerm.nvim',
+    "numToStr/FTerm.nvim",
     config = function()
-      local fterm = require('FTerm')
+      local fterm = require("FTerm")
 
       -- Pick shell based on OS
       local cmd
@@ -18,9 +18,9 @@ return {
 
       -- FTerm setup MUST happen before toggle()
       fterm.setup({
-        ft = 'FTerm',
+        ft = "FTerm",
         cmd = cmd,
-        border = 'double',
+        border = "double",
         blend = 0,
         dimensions = {
           height = 0.5,
@@ -28,12 +28,16 @@ return {
           x = 0.5,
           y = 0.85,
         },
-        hl = 'Normal',
+        hl = "Normal",
       })
 
       -- Keymaps
-      vim.keymap.set('n', '<leader>tt', function() fterm.toggle() end, { desc = '[T]oggle [T]erminal' })
-      vim.keymap.set('t', '<leader>tt', function() fterm.toggle() end, { desc = '[T]oggle [T]erminal' })
+      vim.keymap.set("n", "<leader>tt", function()
+        fterm.toggle()
+      end, { desc = "[T]oggle [T]erminal" })
+      vim.keymap.set("t", "<leader>tt", function()
+        fterm.toggle()
+      end, { desc = "[T]oggle [T]erminal" })
     end,
   },
 }

@@ -3,7 +3,7 @@ return {
     "NeogitOrg/neogit",
     lazy = true,
     dependencies = {
-      "nvim-lua/plenary.nvim",  -- required
+      "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
 
       -- Only one of these is needed.
@@ -14,8 +14,8 @@ return {
     },
     cmd = "Neogit",
     keys = {
-      { "<leader>gg", "<cmd>Neogit<cr>",        desc = "Neogit UI" },
-      { "<leader>gl", "<cmd>Neogit log<cr>",    desc = "Neogit Log" },
+      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit UI" },
+      { "<leader>gl", "<cmd>Neogit log<cr>", desc = "Neogit Log" },
       { "<leader>gc", "<cmd>Neogit commit<cr>", desc = "Neogit Commit" },
     },
 
@@ -23,7 +23,7 @@ return {
     config = function()
       local neogit = require("neogit")
 
-      neogit.setup {
+      neogit.setup({
         -- Hides the hints at the top of the status buffer
         disable_hint = false,
         -- Disables changing the buffer highlights based on where the cursor is.
@@ -96,7 +96,7 @@ return {
         highlight = {
           italic = true,
           bold = true,
-          underline = true
+          underline = true,
         },
         -- Set to false if you want to be responsible for creating _ALL_ keymappings
         use_default_keymaps = true,
@@ -405,7 +405,7 @@ return {
             ["<c-p>"] = "PreviousSection",
           },
         },
-      }
+      })
     end,
-  }
+  },
 }
