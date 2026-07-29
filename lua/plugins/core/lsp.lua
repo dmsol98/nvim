@@ -1,11 +1,16 @@
 return {
   {
     "neovim/nvim-lspconfig",
+
     dependencies = {
+
+    -- Mason
       {
         "mason-org/mason.nvim",
         opts = {},
       },
+
+      -- Mason tool installer
       {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         opts = {
@@ -20,6 +25,8 @@ return {
           },
         },
       },
+
+      -- LazyDev
       {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
@@ -32,8 +39,10 @@ return {
         },
       },
     },
+
+    -- LSP configuration
     config = function()
-      -- Global diagnostics config
+      -- Global diagnostics
       vim.diagnostic.config({
         virtual_text = {
           prefix = "●",
@@ -88,25 +97,6 @@ return {
         -- Make the diagnostic float focusable. Enter with the same command.
         vim.diagnostic.open_float(nil, { focus = true, scope = "line" })
       end, { desc = "Show diagnostics" })
-
-      -- Format on save for clients that support formatting
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("my.lsp", {}),
-        callback = function(args)
-          local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-          if not client:supports_method("textDocument/formatting", 0) then
-            return
-          end
-          vim.api.nvim_clear_autocmds({ event = "BufWritePre", buffer = args.buf, group = "my.lsp" })
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            group = "my.lsp",
-            buffer = args.buf,
-            callback = function()
-              vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
-            end,
-          })
-        end,
-      })
     end,
   },
 }
