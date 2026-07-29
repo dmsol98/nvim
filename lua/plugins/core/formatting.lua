@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = { "BufWritePre" },
+    event = { "BufNewFile", "BufReadPre", "BufWritePre" },
     cmd = { "ConformInfo" },
     keys = {
       {
@@ -10,7 +10,7 @@ return {
           require("conform").format({ async = true, lsp_format = "fallback" })
         end,
         mode = "",
-        desc = "Format buffer",
+        desc = "[F]ormat Buffer",
       },
     },
     opts = {
