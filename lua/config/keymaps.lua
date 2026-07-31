@@ -25,4 +25,7 @@ set("n", "<M-'>", "<C-W>+", { desc = "Increase height" })
 set("n", "<M-/>", "<C-W>-", { desc = "Decrease height" })
 
 -- Windows and tabs
-set("n", "<C-w>c", "<CMD>tabclose<CR>", { desc = "Close current tab" })
+set("n", "<C-w>C", "<CMD>tabclose<CR>", { desc = "Close current tab" })
+set("n", "<C-w>t", "<CMD>tabnew<CR>", { desc = "Open new tab" })
+set("n", "<C-Right>", "<CMD>tabmove +1<CR>", { desc = "Move tab right" })
+set("n", "<C-Left>", "<CMD>tabmove -1<CR>", { desc = "Move tab left" })
