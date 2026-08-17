@@ -29,3 +29,6 @@ set("n", "<C-w>C", "<CMD>tabclose<CR>", { desc = "Close current tab" })
 set("n", "<C-w>t", "<CMD>tabnew<CR>", { desc = "Open new tab" })
 set("n", "<C-Right>", "<CMD>tabmove +1<CR>", { desc = "Move tab right" })
 set("n", "<C-Left>", "<CMD>tabmove -1<CR>", { desc = "Move tab left" })
+
+-- Exit terminal mode
+set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
