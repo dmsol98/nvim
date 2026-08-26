@@ -40,6 +40,7 @@ return {
         -- Also the user event "TransparentClear" will be triggered
         on_clear = function() end,
       })
+      vim.keymap.set("n", "<leader>to", "<CMD>TransparentToggle<CR>", { desc = "[T]oggle [O]pacity" })
     end,
   },
 }
