@@ -3,7 +3,7 @@
 Install Neovim and dependencies using Homebrew.
 
 ```bash
-brew install neovim tree-sitter tree-sitter-cli lua-language-server pyright ruff llvm ripgrep fzf
+brew install fzf llvm lua-language-server neovim pyright ripgrep ruff tree-sitter tree-sitter-cli -y
 ```
 
 Clone this repo into `~/.config/nvim` using SSH.
@@ -22,10 +22,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Install Neovim and dependencies using Chocolately (admin privileges required).
 
 ```pwsh
-choco install fzf gzip llvm lua-language-server make mingw neovim nodejs python ripgrep tree-sitter unzip wget
+choco install fzf gzip llvm lua-language-server make mingw neovim nodejs python ripgrep tree-sitter unzip wget -y
 ```
 
-> Note that on Windows, Python may be redirected by default to use the Microsoft Store execution alias before your local installation. To remedy this, go to: `Settings -> Apps -> Advanced app settings -> App execution alias`, find all Python execution instances, and turn them off.
+> Note that on Windows, Python may be redirected by default to use the Microsoft Store execution alias before your local installation. To remedy this, go to: `Settings -> Apps -> Advanced app settings -> App execution alias`, find all Python execution aliases, and turn them off.
 
 Clone this repo into `%LOCALAPPDATA%/nvim` using SSH.
 
