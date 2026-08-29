@@ -22,7 +22,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Install Neovim and dependencies using Chocolately (admin privileges required).
 
 ```pwsh
-choco install fzf gzip llvm lua-language-server make mingw neovim ripgrep tree-sitter unzip wget
+choco install fzf gzip llvm lua-language-server make mingw neovim nodejs-lts ripgrep tree-sitter unzip wget
 ```
 
 Clone this repo into `%LOCALAPPDATA%/nvim` using SSH.
