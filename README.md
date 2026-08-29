@@ -22,8 +22,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Install Neovim and dependencies using Chocolately (admin privileges required).
 
 ```pwsh
-choco install fzf gzip llvm lua-language-server make mingw neovim nodejs-lts ripgrep tree-sitter unzip wget
+choco install fzf gzip llvm lua-language-server make mingw neovim nodejs python ripgrep tree-sitter unzip wget
 ```
+
+> Note that on Windows, Python may be redirected by default to use the Microsoft Store execution alias before your local installation. To remedy this, go to: `Settings -> Apps -> Advanced app settings -> App execution alias`, find all Python execution instances, and turn them off.
 
 Clone this repo into `%LOCALAPPDATA%/nvim` using SSH.
 
