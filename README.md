@@ -2,8 +2,15 @@
 
 Install Neovim and dependencies using Homebrew.
 
+On Ubuntu, you will need to run these commands:
+
 ```bash
-brew install fzf llvm lua-language-server neovim pyright ripgrep ruff tree-sitter tree-sitter-cli -y
+sudo apt update && sudo apt upgrade - y
+sudo apt install -y build-essential
+```
+
+```bash
+brew install fzf gcc llvm lua-language-server make neovim pyright ripgrep ruff tree-sitter tree-sitter-cli unzip wget -y
 ```
 
 Clone this repo into `~/.config/nvim` using SSH.
