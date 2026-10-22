@@ -59,7 +59,14 @@ return {
         virtual_text = {
           prefix = "●",
         },
-        signs = true,
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚",
+            [vim.diagnostic.severity.WARN] = "󰀪",
+            [vim.diagnostic.severity.INFO] = "󰋽",
+            [vim.diagnostic.severity.HINT] = "󰌶",
+          },
+        },
         underline = true,
         update_in_insert = false,
         severity_sort = true,
@@ -98,7 +105,11 @@ return {
 
       -- C/C++
       vim.lsp.config("clangd", {
-        cmd = { "clangd", "--background-index", "--clang-tidy" },
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+        },
       })
 
       -- Enable LSPs
