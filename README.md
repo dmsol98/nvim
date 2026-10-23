@@ -10,7 +10,7 @@ sudo apt install -y build-essential
 ```
 
 ```bash
-brew install fzf gcc llvm lua-language-server make neovim pyright ripgrep ruff tree-sitter tree-sitter-cli unzip wget -y
+brew install fzf gcc llvm make neovim python ripgrep tree-sitter tree-sitter-cli unzip wget -y
 ```
 
 Clone this repo into `~/.config/nvim` using SSH.
@@ -22,6 +22,7 @@ git clone git@github.com:diegosol127/nvim.git ~/.config/nvim
 # Windows Installation
 
 Install the Chocolatey package manager for simplicity. The docs can be found [here](https://docs.chocolatey.org/en-us/choco/setup/). Enter the following command into an administrative `pwsh` prompt.
+> TODO: Change this to Scoop for reduced elevation approvals
 ```pwsh
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
@@ -29,7 +30,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Install Neovim and dependencies using Chocolately (admin privileges required).
 
 ```pwsh
-choco install fzf gzip llvm lua-language-server make mingw neovim nodejs python ripgrep tree-sitter unzip wget -y
+choco install fzf gzip llvm make mingw neovim nodejs python ripgrep tree-sitter unzip wget -y
 ```
 
 > Note that on Windows, Python may be redirected by default to use the Microsoft Store execution alias before your local installation. To remedy this, go to: `Settings -> Apps -> Advanced app settings -> App execution alias`, find all Python execution aliases, and turn them off.
