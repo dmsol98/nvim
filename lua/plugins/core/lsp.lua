@@ -4,7 +4,19 @@ return {
 
     dependencies = {
 
-    -- Mason
+      -- Telescope
+      {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make",
+          },
+        },
+      },
+
+      -- Mason
       {
         "mason-org/mason.nvim",
         opts = {},
@@ -47,7 +59,14 @@ return {
         virtual_text = {
           prefix = "●",
         },
-        signs = true,
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚",
+            [vim.diagnostic.severity.WARN] = "󰀪",
+            [vim.diagnostic.severity.INFO] = "󰋽",
+            [vim.diagnostic.severity.HINT] = "󰌶",
+          },
+        },
         underline = true,
         update_in_insert = false,
         severity_sort = true,
@@ -86,7 +105,11 @@ return {
 
       -- C/C++
       vim.lsp.config("clangd", {
-        cmd = { "clangd", "--background-index", "--clang-tidy" },
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+        },
       })
 
       -- Enable LSPs
@@ -97,6 +120,29 @@ return {
         -- Make the diagnostic float focusable. Enter with the same command.
         vim.diagnostic.open_float(nil, { focus = true, scope = "line" })
       end, { desc = "Show diagnostics" })
+
+      --Keymaps
+      local tb = require("telescope.builtin")
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(ev)
+          local function map(lhs, rhs, desc)
+            vim.keymap.set("n", lhs, rhs, { buffer = ev.buf, desc = desc })
+          end
+
+          -- Navigation
+          map("<leader>ld", tb.lsp_definitions, "Go to definition")
+          map("<leader>lD", vim.lsp.buf.declaration, "Go to declaration")
+          map("<leader>lr", tb.lsp_references, "List references")
+          map("<leader>li", tb.lsp_implementations, "List implementations")
+          map("<leader>lt", tb.lsp_type_definitions, "Go to type definition")
+          map("<leader>lR", vim.lsp.buf.rename, "Rename symbol")
+          map("<leader>lc", vim.lsp.buf.code_action, "Code action")
+          map("<leader>le", function()
+            tb.diagnostics({ bufnr = 0 })
+          end, "Buffer diagnostic list")
+          map("<leader>lE", tb.diagnostics, "Project diagnostic list")
+        end,
+      })
     end,
   },
 }
