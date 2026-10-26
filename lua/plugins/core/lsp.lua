@@ -129,6 +129,12 @@ return {
             vim.keymap.set("n", lhs, rhs, { buffer = ev.buf, desc = desc })
           end
 
+          local opts_lsp = require("telescope.themes").get_ivy({
+            layout_config = { width = 0.50, height = 0.50 },
+            path_display = { "smart" },
+            -- fname_width = 5,
+          })
+
           -- Navigation
           map("<leader>ld", tb.lsp_definitions, "Go to definition")
           map("<leader>lD", vim.lsp.buf.declaration, "Go to declaration")
@@ -136,11 +142,17 @@ return {
           map("<leader>li", tb.lsp_implementations, "List implementations")
           map("<leader>lt", tb.lsp_type_definitions, "Go to type definition")
           map("<leader>lR", vim.lsp.buf.rename, "Rename symbol")
-          map("<leader>lc", vim.lsp.buf.code_action, "Code action")
+          map("<leader>la", vim.lsp.buf.code_action, "Code action")
           map("<leader>le", function()
             tb.diagnostics({ bufnr = 0 })
           end, "Buffer diagnostic list")
           map("<leader>lE", tb.diagnostics, "Project diagnostic list")
+          map("<leader>ls", function()
+            tb.lsp_document_symbols(opts_lsp)
+          end, "Document symbols")
+          map("<leader>lS", function()
+            tb.lsp_dynamic_workspace_symbols(opts_lsp)
+          end, "Workspace symbols")
         end,
       })
     end,
