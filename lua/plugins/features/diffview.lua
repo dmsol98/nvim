@@ -513,8 +513,13 @@ return {
     })
 
     -- Custom keymaps
-    vim.keymap.set("n", "<leader>dd", "<CMD>DiffviewOpen<CR>", { desc = "[D]iffview [D]iff" })
-    vim.keymap.set("n", "<leader>dh", "<CMD>DiffviewFileHistory<CR>", { desc = "[D]iffview [H]istory" })
-    vim.keymap.set("n", "<leader>dc", "<CMD>DiffviewClose<CR>", { desc = "[D]iffview [C]lose" })
+    vim.keymap.set("n", "<leader>td", function()
+      local lib = require("diffview.lib")
+      if lib.get_current_view() then
+        vim.cmd("DiffviewClose")
+      else
+        vim.cmd("DiffviewOpen")
+      end
+    end, { desc = "[T]oggle [D]iffview" })
   end,
 }
