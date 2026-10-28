@@ -129,11 +129,30 @@ return {
             vim.keymap.set("n", lhs, rhs, { buffer = ev.buf, desc = desc })
           end
 
-          local opts_lsp = require("telescope.themes").get_ivy({
-            layout_config = { width = 0.50, height = 0.50 },
-            path_display = { "smart" },
-            -- fname_width = 5,
+          local opts_sym = require("telescope.themes").get_ivy({
+            layout_config = { height = 0.50 },
           })
+
+          local padding = 6
+          local function apply_lsp_doc_sym_config(w_frac)
+            local total_width = math.floor(vim.o.columns) / 2 - padding
+            local sym_width = math.floor(total_width * w_frac)
+            return vim.tbl_extend("force", opts_sym, {
+              symbol_width = sym_width,
+              symbol_type_width = total_width - sym_width,
+            })
+          end
+          local function apply_lsp_dyn_ws_sym_config(w_frac1, w_frac2)
+            local total_width = math.floor(vim.o.columns) / 2 - padding
+            local sym_width1 = math.floor(total_width * w_frac1)
+            local sym_width2 = math.floor(total_width * w_frac2)
+            return vim.tbl_extend("force", opts_sym, {
+              path_display = { "tail" },
+              fname_width = sym_width1,
+              symbol_width = sym_width2,
+              symbol_type_width = total_width - sym_width1 - sym_width2,
+            })
+          end
 
           -- Navigation
           map("<leader>ld", tb.lsp_definitions, "Go to definition")
@@ -148,10 +167,10 @@ return {
           end, "Buffer diagnostic list")
           map("<leader>lE", tb.diagnostics, "Project diagnostic list")
           map("<leader>ls", function()
-            tb.lsp_document_symbols(opts_lsp)
+            tb.lsp_document_symbols(apply_lsp_doc_sym_config(0.75))
           end, "Document symbols")
           map("<leader>lS", function()
-            tb.lsp_dynamic_workspace_symbols(opts_lsp)
+            tb.lsp_dynamic_workspace_symbols(apply_lsp_dyn_ws_sym_config(0.45, 0.45))
           end, "Workspace symbols")
         end,
       })
