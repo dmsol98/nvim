@@ -18,6 +18,7 @@ return {
         lua = { "stylua" },
         cpp = { "clang-format" },
         c = { "clang-format" },
+        json = { "prettierd" },
         python = { "ruff_format" },
       },
       format_on_save = {
