@@ -14,6 +14,6 @@ return {
     keys = {
       { "<leader>tc", "<CMD>CsvViewToggle<CR>", desc = "[T]oggle [C]sv View" },
     },
-    -- cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+    cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
   },
 }
